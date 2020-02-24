@@ -1,0 +1,15 @@
+[Desktop Entry]
+Encoding=UTF-8
+Name=SpotifyWidget
+Comment=Spotify current music dock widget
+Type=Service
+
+X-KDE-PluginInfo-Author=Maksym Zub
+X-KDE-PluginInfo-Email=maxzubec@gmail.com
+X-KDE-PluginInfo-Name=org.kde.tutorial
+X-KDE-PluginInfo-Version=1.0
+X-KDE-PluginInfo-Website=plasma.kde.org
+X-KDE-ServiceTypes=Plasma/Applet
+X-Plasma-API=declarativeappletscript
+X-Plasma-MainScript=ui/main.qml
+X-KDE-PluginInfo-Category=Windows and Tasks
