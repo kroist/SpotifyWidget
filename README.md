@@ -1,3 +1,3 @@
 # SpotifyWidget
 
-Simple Plasma widget that shows cuurent Spotify track in the dock.
+Simple KDE Plasma 5 dock widget that shows current Spotify track.
