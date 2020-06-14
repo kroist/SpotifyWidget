@@ -8,6 +8,7 @@ import org.kde.plasma.extras 2.0 as PlasmaExtras
 
 Item {
   id:root
+  visible: source.hasMetadata
   width: units.gridUnit * 10
   height: units.gridUnit * 4
   //property var currentMetadata: mpris2Source.currentData ? mpris2Source.currentData.Metadata : undefined
