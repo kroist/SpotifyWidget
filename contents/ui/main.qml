@@ -34,36 +34,46 @@ Item {
         //pixelSize: 1024
     }
     minimumPixelSize: 1
-    text: source.artist + " - " + source.title
+    text: source.artist + " - " + source.title+ " " + source.getsources
     horizontalAlignment: Text.AlignRight
   }
 
   PlasmaCore.DataSource {
     id: source
     engine: "mpris2"
-    connectedSources: Array("@multiplex")
+    connectedSources: sources
     interval: 0
     
     
     property bool hasMetadata: getHasMetadata()
+    property string mysource: "spotify"
     property string title: getMetadata("xesam:title", '')
     property string artist: getMetadata("xesam:artist", []).join(", ")
-
-
-    function getHasData() {
-        return data["@multiplex"] != undefined
-            && data["@multiplex"]["PlaybackStatus"] != undefined;
+    property string player: "spotifykek"
+    property string getsources: ""
+    
+    onNewData:{
+      source.player = sourceName
     }
 
+
     function getHasMetadata() {
-        return data["@multiplex"] != undefined
-            && data["@multiplex"]["Metadata"] != undefined
-            && data["@multiplex"]["Metadata"]["mpris:trackid"] != undefined;
+        return data[mysource] != undefined
+            && data[mysource]["Metadata"] != undefined
+            && data[mysource]["Metadata"]["mpris:trackid"] != undefined;
     }
 
     function getMetadata(entry, def) {
-        if (hasMetadata && data["@multiplex"]["Metadata"][entry] != undefined)
-            return data["@multiplex"]["Metadata"][entry];
+        /*getsources = ""
+        for (var prop in data) {
+            getsources = getsources + prop + " "
+        }
+        getsources = getsources + "-:-"
+        for (var prop in data["spotify"]["Metadata"]) {
+            getsources = getsources + prop + " "
+        }*/
+        if (hasMetadata && data[mysource]["Metadata"][entry] != undefined)
+            return data[mysource]["Metadata"][entry];
         else
             return def;
     }

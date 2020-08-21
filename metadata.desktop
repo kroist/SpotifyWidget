@@ -6,7 +6,7 @@ Type=Service
 
 X-KDE-PluginInfo-Author=Maksym Zub
 X-KDE-PluginInfo-Email=maxzubec@gmail.com
-X-KDE-PluginInfo-Name=org.kde.tutorial
+X-KDE-PluginInfo-Name=org.kroist.spotifywidget
 X-KDE-PluginInfo-Version=1.0
 X-KDE-PluginInfo-Website=plasma.kde.org
 X-KDE-ServiceTypes=Plasma/Applet
