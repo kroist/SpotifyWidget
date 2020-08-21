@@ -52,9 +52,6 @@ Item {
     property string player: "spotifykek"
     property string getsources: ""
     
-    onNewData:{
-      source.player = sourceName
-    }
 
 
     function getHasMetadata() {
@@ -64,14 +61,6 @@ Item {
     }
 
     function getMetadata(entry, def) {
-        /*getsources = ""
-        for (var prop in data) {
-            getsources = getsources + prop + " "
-        }
-        getsources = getsources + "-:-"
-        for (var prop in data["spotify"]["Metadata"]) {
-            getsources = getsources + prop + " "
-        }*/
         if (hasMetadata && data[mysource]["Metadata"][entry] != undefined)
             return data[mysource]["Metadata"][entry];
         else
